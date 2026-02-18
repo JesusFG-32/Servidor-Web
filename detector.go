@@ -26,14 +26,41 @@ func detectDetails(ua string) (os, browser, bgColor, textColor string) {
 		os = "Android"
 		bgColor = "#3DDC84" // Android Green
 		textColor = "#000000"
-	} else if strings.Contains(uaLower, "linux") {
-		os = "Linux"
-		bgColor = "#333333" // Dark Gray for Linux
-		textColor = "#FFFFFF"
 	} else if strings.Contains(uaLower, "iphone") || strings.Contains(uaLower, "ipad") {
 		os = "iOS"
 		bgColor = "#000000" // Black for iOS
 		textColor = "#FFFFFF"
+	} else if strings.Contains(uaLower, "linux") {
+		// Specific Linux Distro check
+		if strings.Contains(uaLower, "ubuntu") {
+			os = "Ubuntu"
+			bgColor = "#E95420" // Ubuntu Orange
+			textColor = "#FFFFFF"
+		} else if strings.Contains(uaLower, "debian") {
+			os = "Debian"
+			bgColor = "#A80030" // Debian Red
+			textColor = "#FFFFFF"
+		} else if strings.Contains(uaLower, "fedora") {
+			os = "Fedora"
+			bgColor = "#294172" // Fedora Blue
+			textColor = "#FFFFFF"
+		} else if strings.Contains(uaLower, "arch") {
+			os = "Arch Linux"
+			bgColor = "#1793D1" // Arch Blue/Cyan
+			textColor = "#FFFFFF"
+		} else if strings.Contains(uaLower, "mint") {
+			os = "Linux Mint"
+			bgColor = "#87CF3E" // Mint Green
+			textColor = "#000000"
+		} else if strings.Contains(uaLower, "gentoo") {
+			os = "Gentoo"
+			bgColor = "#54487A" // Gentoo Purple
+			textColor = "#FFFFFF"
+		} else {
+			os = "linux"
+			bgColor = "#333333" // Default Linux Dark Gray
+			textColor = "#FFFFFF"
+		}
 	}
 
 	// Browser Detection (Simple heuristic)

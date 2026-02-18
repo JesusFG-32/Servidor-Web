@@ -7,18 +7,16 @@
     <title>Info del Sistema</title>
 </head>
 
-<body>
+<body style="background-color: {{.BgColor}};">
     <div class="card">
         <h1>JESUSFG</h1>
         <hr>
         <h2>Servidor</h2>
         <p>Hora actual del servidor: <span class="highlight">{{.Time}}</span></p>
         <h2>Cliente</h2>
-        <p>Navegador: <span id="browser" class="highlight">Cargando...</span></p>
-        <p>Sistema Operativo: <span id="os" class="highlight">Cargando...</span></p>
+        <p>Navegador: <span class="highlight">{{.Browser}}</span></p>
+        <p>Sistema Operativo: <span class="highlight">{{.OS}}</span></p>
     </div>
-
-    <script src="/static/js/script.js"></script>
 </body>
 
 </html>
