@@ -57,7 +57,7 @@ func detectDetails(ua string) (os, browser, bgColor, textColor string) {
 			bgColor = "#54487A" // Gentoo Purple
 			textColor = "#FFFFFF"
 		} else {
-			os = "linux"
+			os = "Linux"
 			bgColor = "#333333" // Default Linux Dark Gray
 			textColor = "#FFFFFF"
 		}
